@@ -20,13 +20,67 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".FirstFragment">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="322dp"
+            android:layout_height="38dp"
+            android:alpha="3"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:textSize="20sp"
+            android:translationX="40dp"
+            android:translationY="330dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/Calories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.179"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintVertical_bias="0.0"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/button"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="144dp"
+            android:layout_height="55dp"
+            android:text="@string/calculate"
+            android:translationY="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Calories"
+            android:layout_width="221dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="150dp"
+            android:text="@string/calories"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:translationY="450dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.31" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -45,28 +99,6 @@
         android:inputType="number"
         android:translationX="13dp"
         android:translationY="100dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="322dp"
-        android:layout_height="38dp"
-        android:alpha="3"
-        android:scaleX="1"
-        android:scaleY="1"
-        android:text="TextView"
-        android:translationX="40dp"
-        android:translationY="330dp"
-        android:visibility="visible"
-        tools:visibility="visible" />
-
-    <Button
-        android:id="@+id/button"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:translationX="13dp"
-        android:translationY="250dp" />
 
     <EditText
         android:id="@+id/editTextNumber2"
@@ -92,12 +124,5 @@
         android:text="Weight(kg)"
         android:translationX="13dp"
         android:translationY="150dp" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:translationY="450dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

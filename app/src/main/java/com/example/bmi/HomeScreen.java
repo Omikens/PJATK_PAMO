@@ -1,55 +1,43 @@
 package com.example.bmi;
+import android.content.Intent;
 import android.os.Bundle;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.fragment.NavHostFragment;
 
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
-
-public class SecondActivity extends AppCompatActivity {
+public class HomeScreen extends AppCompatActivity {
 
     private TextView textView;
-    private Button button;
+    private Button button3;
     private EditText editText;
     private EditText editText2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.home_screen);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*textView = findViewById(R.id.textView);
-        editText = findViewById(R.id.editTextNumber);
-        editText2 = findViewById(R.id.editTextNumber2);
-        button = findViewById(R.id.button);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View V){
-                double height = Integer.parseInt(editText.getText().toString());
-                double weight = Integer.parseInt(editText2.getText().toString());
-                double bmi = (weight/(height*height))*10000;
-                DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                String bmiFormat = decimalFormat.format(bmi);
-                textView.setText(bmiFormat);
+        button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
             }
         });
+    }
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> Snackbar.make(view, "Dawid Szabłowski s16667", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show());
-
-         */
+    public void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     @Override
