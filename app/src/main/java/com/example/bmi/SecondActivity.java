@@ -1,5 +1,4 @@
 package com.example.bmi;
-import android.content.Intent;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -16,35 +15,24 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
-public class MainActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
 
     private TextView textView;
     private Button button;
     private EditText editText;
     private EditText editText2;
 
-    private Button button2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_second);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        textView = findViewById(R.id.textView);
+        /*textView = findViewById(R.id.textView);
         editText = findViewById(R.id.editTextNumber);
         editText2 = findViewById(R.id.editTextNumber2);
         button = findViewById(R.id.button);
-
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity2();
-            }
-        });
-
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V){
@@ -60,11 +48,8 @@ public class MainActivity extends AppCompatActivity {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> Snackbar.make(view, "Dawid Szabłowski s16667", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
-    }
 
-    public void openActivity2() {
-        Intent intent = new Intent(this, SecondActivity.class);
-        startActivity(intent);
+         */
     }
 
     @Override
