@@ -10,6 +10,7 @@
         android:layout_width="212dp"
         android:layout_height="82dp"
         android:text="@string/start"
+        android:translationY="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -25,6 +26,7 @@
         android:textColor="@color/purple_500"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:translationY="50dp"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -37,10 +39,11 @@
         android:layout_width="190dp"
         android:layout_height="185dp"
         android:layout_marginBottom="24dp"
+        android:contentDescription="@string/hello_home"
+        android:translationY="50dp"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bmi"
-        android:contentDescription="@string/hello_home" />
+        app:srcCompat="@drawable/bmi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
