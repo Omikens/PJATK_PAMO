@@ -17,15 +17,14 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textView;
-    private TextView textView3;
-    private Button button;
+    private TextView textViewBMI;
+    private TextView textViewPPM;
     private EditText editTextHeight;
-    private EditText editText2;
-    private EditText editText3;
-
-    private Button button2;
-    private Button calories;
+    private EditText editTextWeight;
+    private EditText editTextAge;
+    private Button buttonBMI;
+    private Button buttonHome;
+    private Button buttonCalories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,47 +33,45 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        textView = findViewById(R.id.textView);
-        textView3 = findViewById(R.id.textView3);
-        editTextHeight = findViewById(R.id.editTextNumber);
-        editText2 = findViewById(R.id.editTextNumber2);
-        editText3 = findViewById(R.id.editTextNumber3);
-        button = findViewById(R.id.button);
+        textViewBMI = findViewById(R.id.textView);
+        textViewPPM = findViewById(R.id.textView3);
+        editTextHeight = findViewById(R.id.editTextNumberHeight);
+        editTextWeight = findViewById(R.id.editTextNumberWeight);
+        editTextAge = findViewById(R.id.editTextNumberAge);
+        buttonBMI = findViewById(R.id.buttonBMI);
+        buttonHome = findViewById(R.id.buttonHome);
+        buttonCalories = findViewById(R.id.buttonCalories);
 
-        calories = findViewById(R.id.Calories);
+        buttonBMI.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View V){
+                double height = Integer.parseInt(editTextHeight.getText().toString());
+                double weight = Integer.parseInt(editTextWeight.getText().toString());
+                double bmi = (weight/(height*height))*10000;
+                DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                String bmiFormat = decimalFormat.format(bmi);
+                textViewBMI.setText(bmiFormat);
+                buttonCalories.setVisibility(View.VISIBLE);
+            }
+        });
 
-        calories.setOnClickListener(new View.OnClickListener() {
+        buttonCalories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double weight = Integer.parseInt(editText2.getText().toString());
+                double weight = Integer.parseInt(editTextWeight.getText().toString());
                 double height = Integer.parseInt(editTextHeight.getText().toString());
-                double age = Integer.parseInt(editText3.getText().toString());
+                double age = Integer.parseInt(editTextAge.getText().toString());
                 double PPM = 66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * age);
 
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String PMMFormat = decimalFormat.format(PPM);
-                textView3.setText(PMMFormat);
+                textViewPPM.setText(PMMFormat);
             }
         });
 
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity2();
-            }
-        });
-
-
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View V){
-                double height = Integer.parseInt(editTextHeight.getText().toString());
-                double weight = Integer.parseInt(editText2.getText().toString());
-                double bmi = (weight/(height*height))*10000;
-                DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                String bmiFormat = decimalFormat.format(bmi);
-                textView.setText(bmiFormat);
-                calories.setVisibility(View.VISIBLE);
             }
         });
 

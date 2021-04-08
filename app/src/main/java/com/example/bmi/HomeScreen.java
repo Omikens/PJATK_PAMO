@@ -9,15 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 public class HomeScreen extends AppCompatActivity {
 
-    private TextView textView;
-    private Button button3;
-    private EditText editText;
-    private EditText editText2;
+    private Button buttonStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +21,8 @@ public class HomeScreen extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        buttonStart = (Button) findViewById(R.id.buttonStart);
+        buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMainActivity();
