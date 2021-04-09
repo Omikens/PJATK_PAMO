@@ -157,15 +157,6 @@
         android:translationX="13dp"
         android:translationY="150dp" />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOff="Female"
-        android:textOn="Male"
-        android:translationY="300dp"
-        tools:text="Female" />
-
     <CheckedTextView
         android:id="@+id/checkedTextView3"
         android:layout_width="wrap_content"
