@@ -1,5 +1,6 @@
 package com.example.bmi;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonHome;
     private Button buttonCalories;
 
+    private Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         buttonBMI = findViewById(R.id.buttonBMI);
         buttonHome = findViewById(R.id.buttonHome);
         buttonCalories = findViewById(R.id.buttonCalories);
+        
+        button = findViewById(R.id.button);
 
         buttonBMI.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V){
@@ -65,8 +70,25 @@ public class MainActivity extends AppCompatActivity {
                 DecimalFormat decimalFormat = new DecimalFormat("#.##");
                 String PMMFormat = decimalFormat.format(PPM);
                 textViewPPM.setText(PMMFormat);
+                button.setVisibility(View.VISIBLE);
             }
         });
+
+        button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "http://stackoverflow.com/";
+                double height = Integer.parseInt(editTextHeight.getText().toString());
+                double weight = Integer.parseInt(editTextWeight.getText().toString());
+                double bmi = (weight/(height*height))*10000;
+                if (bmi <= 18){url = "https://blog.nasm.org/recipes-for-gaining-muscle";}
+                if (bmi > 18 && bmi < 25){url = "https://www.delicious.com.au/recipes/collections/gallery/60-healthy-dinners-you-can-cook-in-30-minutes/1vo4q819";}
+                if (bmi >= 25){url = "https://www.eatingwell.com/recipes/18045/weight-loss-diet/";}
+                Uri uriUrl = Uri.parse(url);
+                Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+                startActivity(launchBrowser);
+            }
+        }));
 
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
