@@ -14,5 +14,7 @@
     <string name="calories">Show calories for my BMI</string>
     <string name="calculate">Calculate BMI</string>
     <string name="back">Back to home</string>
+    <string name="man">Male</string>
+    <string name="woman">Female</string>
     <string name="recipes">Show recipes for me!</string>
 </resources>

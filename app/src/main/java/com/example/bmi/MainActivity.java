@@ -1,4 +1,5 @@
 package com.example.bmi;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -26,9 +29,11 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonBMI;
     private Button buttonHome;
     private Button buttonCalories;
+    private RadioGroup radioGroup;
 
     private Button button;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,33 +49,50 @@ public class MainActivity extends AppCompatActivity {
         buttonBMI = findViewById(R.id.buttonBMI);
         buttonHome = findViewById(R.id.buttonHome);
         buttonCalories = findViewById(R.id.buttonCalories);
+        radioGroup = findViewById(R.id.radioGroup);
         
         button = findViewById(R.id.button);
 
         buttonBMI.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V){
-                double height = Integer.parseInt(editTextHeight.getText().toString());
-                double weight = Integer.parseInt(editTextWeight.getText().toString());
-                double bmi = (weight/(height*height))*10000;
-                DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                String bmiFormat = decimalFormat.format(bmi);
-                textViewBMI.setText(bmiFormat);
-                buttonCalories.setVisibility(View.VISIBLE);
+                try {
+                    double height = Integer.parseInt(editTextHeight.getText().toString());
+                    double weight = Integer.parseInt(editTextWeight.getText().toString());
+                    double bmi = (weight / (height * height)) * 10000;
+                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                    String bmiFormat = decimalFormat.format(bmi);
+                    textViewBMI.setText(bmiFormat);
+                    buttonCalories.setVisibility(View.VISIBLE);
+                }
+                catch(NumberFormatException e) {
+                    double height = 0;
+                }
             }
         });
 
         buttonCalories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                RadioButton selectedRadioButton = findViewById(selectedId);
+                String selectedRbText = selectedRadioButton.getText().toString();
                 double weight = Integer.parseInt(editTextWeight.getText().toString());
                 double height = Integer.parseInt(editTextHeight.getText().toString());
                 double age = Integer.parseInt(editTextAge.getText().toString());
-                double PPM = 66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * age);
-
-                DecimalFormat decimalFormat = new DecimalFormat("#.##");
-                String PMMFormat = decimalFormat.format(PPM);
-                textViewPPM.setText(PMMFormat);
-                button.setVisibility(View.VISIBLE);
+                if (selectedRbText.equals("Male")) {
+                    double PPM = 66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * age);
+                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                    String PMMFormat = decimalFormat.format(PPM);
+                    textViewPPM.setText(PMMFormat);
+                    button.setVisibility(View.VISIBLE);
+                }
+                if (selectedRbText.equals("Female")) {
+                    double PPM = 655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * age);
+                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                    String PMMFormat = decimalFormat.format(PPM);
+                    textViewPPM.setText(PMMFormat);
+                    button.setVisibility(View.VISIBLE);
+                }
             }
         });
 
