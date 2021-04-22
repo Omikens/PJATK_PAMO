@@ -17,4 +17,5 @@
     <string name="man">Male</string>
     <string name="woman">Female</string>
     <string name="recipes">Show recipes for me!</string>
+    <string name="news">News</string>
 </resources>
