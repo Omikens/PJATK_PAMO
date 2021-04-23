@@ -31,7 +31,7 @@ public class NewsScreen extends AppCompatActivity {
         BarChart barChart = findViewById(R.id.barChart);
 
         ArrayList<BarEntry> covid = new ArrayList<>();
-        covid.add(new BarEntry(2018, 0));
+        covid.add(new BarEntry( 2018, 0));
         covid.add(new BarEntry(2019, 1));
         covid.add(new BarEntry(2020, 420));
         covid.add(new BarEntry(2021, 2137));
