@@ -14,6 +14,7 @@ public class HomeScreen extends AppCompatActivity {
 
     private Button buttonStart;
     private Button buttonNews;
+    private Button buttonQuiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,14 @@ public class HomeScreen extends AppCompatActivity {
                 openNewsScreen();
             }
         });
+
+        buttonQuiz = (Button) findViewById(R.id.buttonQuiz);
+        buttonQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openQuizMain();
+            }
+        });
     }
 
     public void openMainActivity() {
@@ -46,6 +55,11 @@ public class HomeScreen extends AppCompatActivity {
 
     public void openNewsScreen() {
         Intent intent = new Intent(this, NewsScreen.class);
+        startActivity(intent);
+    }
+
+    public void openQuizMain() {
+        Intent intent = new Intent(this, QuizMain.class);
         startActivity(intent);
     }
 
