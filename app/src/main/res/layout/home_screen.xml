@@ -10,7 +10,7 @@
         android:layout_width="212dp"
         android:layout_height="82dp"
         android:text="@string/start"
-        android:translationY="0dp"
+        android:translationY="-70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -19,12 +19,12 @@
 
     <TextView
         android:id="@+id/textViewLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="252dp"
+        android:layout_height="43dp"
         android:gravity="center"
         android:text="@string/hello_home"
         android:textColor="@color/purple_500"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         android:translationY="50dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonStart"
@@ -48,20 +48,21 @@
 
     <Button
         android:id="@+id/buttonNews"
-        android:layout_width="135dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="212dp"
+        android:layout_height="82dp"
+        android:translationY="-30dp"
         android:text="@string/news"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonStart" />
 
     <Button
         android:id="@+id/buttonQuiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Button"
+        android:layout_width="212dp"
+        android:layout_height="82dp"
+        android:text="@string/quiz"
+        android:translationY="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonNews" />

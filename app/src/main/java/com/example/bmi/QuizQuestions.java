@@ -3,13 +3,13 @@ package com.example.bmi;
 public class QuizQuestions {
 
     public String Questions[] = {
-            "Covid is:",
+            "BMI stands for:",
             "somchu is:",
             "Popoga?"
     };
 
     private String Answers[][] = {
-            {"Disease", "Lie", "Conspiracy", "Popoga"},
+            {"Body Mas Index", "Brown Mushroom Incline", "Black Monks Inquisition", "Popoga"},
             {"Honda", "XD", "DDDDjango", "Popoga"},
             {"YES", "YES", "Huge POPOGA", "NO"},
     };

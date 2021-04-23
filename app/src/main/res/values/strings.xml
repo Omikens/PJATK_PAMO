@@ -18,4 +18,5 @@
     <string name="woman">Female</string>
     <string name="recipes">Show recipes for me!</string>
     <string name="news">CHARTS</string>
+    <string name="quiz">QUIZ</string>
 </resources>
