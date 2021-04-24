@@ -127,9 +127,9 @@ public class QuizMain extends AppCompatActivity {
     private void gameOver() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(QuizMain.this);
         alertDialogBuilder
-                .setMessage("GAME OVER!" + Score)
+                .setMessage("GAME OVER! Your score is: " + Score)
                 .setCancelable(false)
-                .setPositiveButton("NEW GAME",
+                .setPositiveButton("New game",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
