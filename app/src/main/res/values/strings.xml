@@ -19,4 +19,6 @@
     <string name="recipes">Show recipes for me!</string>
     <string name="news">CHARTS</string>
     <string name="quiz">QUIZ</string>
+    <string name="bar">Bar Chart</string>
+    <string name="pie">Pie Chart</string>
 </resources>

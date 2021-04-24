@@ -54,7 +54,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void openNewsScreen() {
-        Intent intent = new Intent(this, NewsScreen.class);
+        Intent intent = new Intent(this, ChartsScreen.class);
         startActivity(intent);
     }
 
