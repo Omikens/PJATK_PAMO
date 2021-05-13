@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.bmi">
+    package="com.example.bmi_kotlin">
 
     <application
         android:allowBackup="true"
@@ -9,12 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BMI">
+        android:theme="@style/Theme.BMIKotlin">
         <activity
             android:name=".HomeScreen"
             android:label="@string/app_name"
-            android:theme="@style/Theme.BMI.NoActionBar"
-            tools:ignore="Instantiatable">
+            android:theme="@style/Theme.BMIKotlin.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,32 +22,27 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.BMI.NoActionBar"
-            tools:ignore="Instantiatable">
-        </activity>
-        <activity
-            android:name=".BarChartScreen"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.BMI.NoActionBar"
-            tools:ignore="Instantiatable">
-        </activity>
-        <activity
-            android:name=".QuizMain"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.BMI.NoActionBar"
-            tools:ignore="Instantiatable">
-        </activity>
-        <activity
-            android:name=".ChartsScreen"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.BMI.NoActionBar"
-            tools:ignore="Instantiatable">
+            android:theme="@style/Theme.BMIKotlin.NoActionBar">
         </activity>
         <activity
             android:name=".PieChartScreen"
             android:label="@string/app_name"
-            android:theme="@style/Theme.BMI.NoActionBar"
-            tools:ignore="Instantiatable">
+            android:theme="@style/Theme.BMIKotlin.NoActionBar">
+        </activity>
+        <activity
+            android:name=".BarChartScreen"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.BMIKotlin.NoActionBar">
+        </activity>
+        <activity
+            android:name=".QuizMain"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.BMIKotlin.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ChartsScreen"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.BMIKotlin.NoActionBar">
         </activity>
     </application>
 
