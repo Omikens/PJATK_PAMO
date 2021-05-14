@@ -1,17 +1,17 @@
 package com.example.bmi_kotlin
 
 import android.annotation.SuppressLint
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
+
 class QuizMain : AppCompatActivity() {
 
     var answer1: Button? = null; var answer2: Button? = null
     var answer3: Button? = null; var answer4: Button? = null
-    //var score: TextView? = null
     var question:TextView? = null
 
     private val Questions = QuizQuestions()
@@ -24,18 +24,18 @@ class QuizMain : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.bmi_kotlin.R.layout.quiz_main)
-        setSupportActionBar(findViewById(com.example.bmi_kotlin.R.id.toolbar))
+        setContentView(R.layout.quiz_main)
+        setSupportActionBar(findViewById(R.id.toolbar))
 
 
 
         answer1 = findViewById(R.id.answer1)
-        answer2 = findViewById(com.example.bmi_kotlin.R.id.answer2)
-        answer3 = findViewById(com.example.bmi_kotlin.R.id.answer3)
-        answer4 = findViewById(com.example.bmi_kotlin.R.id.answer4)
+        answer2 = findViewById(R.id.answer2)
+        answer3 = findViewById(R.id.answer3)
+        answer4 = findViewById(R.id.answer4)
 
         val score: TextView = findViewById(com.example.bmi_kotlin.R.id.score)
-        question = findViewById(com.example.bmi_kotlin.R.id.question)
+        question = findViewById(R.id.question)
 
         score.text = ("Score: $Score")
 
@@ -48,7 +48,6 @@ class QuizMain : AppCompatActivity() {
             }
             else {
                 gameOver()
-                //Navigation.findNavController(view).navigate(R.id.action_covidQuizFragment_to_startingFragment)
             }
         }
 
@@ -60,7 +59,6 @@ class QuizMain : AppCompatActivity() {
             }
             else {
                 gameOver()
-                //Navigation.findNavController(view).navigate(R.id.action_covidQuizFragment_to_startingFragment)
             }
         }
 
@@ -72,7 +70,6 @@ class QuizMain : AppCompatActivity() {
             }
             else {
                 gameOver()
-                //Navigation.findNavController(view).navigate(R.id.action_covidQuizFragment_to_startingFragment)
             }
         }
 
@@ -84,11 +81,8 @@ class QuizMain : AppCompatActivity() {
             }
             else {
                 gameOver()
-                //Navigation.findNavController(view).navigate(R.id.action_covidQuizFragment_to_startingFragment)
             }
         }
-
-        //return view;
     }
 
     private fun updateQuestion(num: Int) {
@@ -101,26 +95,18 @@ class QuizMain : AppCompatActivity() {
         Answer = Questions.getCorrectAnswer(num)
     }
 
-
     private fun gameOver() {
-
-
-//        Context context = requireActivity().getApplicationContext();
-//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-//        alertDialogBuilder
-//                .setMessage("GAME OVER! Your score is: " + Score)
-//                .setCancelable(false)
-//                .setPositiveButton("New game",
-//                        (dialog, which) -> startActivity(new Intent(requireActivity().getApplicationContext(), CovidQuizFragment.class)))
-//                .setNegativeButton("Exit",
-//                        (dialog, which) -> getActivity().finish());
-//        AlertDialog alertDialog = alertDialogBuilder.create();
-//        alertDialog.show();
-
-
-
-//        val context: Context = requireActivity().applicationContext;
-//        val toast: Toast = Toast.makeText(context,"Game Over!",Toast.LENGTH_SHORT);
-//        toast.show();
+        val alertDialogBuilder = AlertDialog.Builder(this@QuizMain)
+        alertDialogBuilder
+            .setMessage("GAME OVER! Your score is: $Score")
+            .setCancelable(false)
+            .setPositiveButton(
+                "New game"
+            ) { dialog, which -> startActivity(Intent(applicationContext, QuizMain::class.java)) }
+            .setNegativeButton(
+                "Exit"
+            ) { dialog, which -> finish() }
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
     }
 }
