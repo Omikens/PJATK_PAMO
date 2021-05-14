@@ -1,8 +1,10 @@
 package com.example.bmi_kotlin
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class QuizMain : AppCompatActivity() {
@@ -102,23 +104,23 @@ class QuizMain : AppCompatActivity() {
 
     private fun gameOver() {
 
-        /*
-        Context context = requireActivity().getApplicationContext();
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-        alertDialogBuilder
-                .setMessage("GAME OVER! Your score is: " + Score)
-                .setCancelable(false)
-                .setPositiveButton("New game",
-                        (dialog, which) -> startActivity(new Intent(requireActivity().getApplicationContext(), CovidQuizFragment.class)))
-                .setNegativeButton("Exit",
-                        (dialog, which) -> getActivity().finish());
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
-        */
+
+//        Context context = requireActivity().getApplicationContext();
+//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+//        alertDialogBuilder
+//                .setMessage("GAME OVER! Your score is: " + Score)
+//                .setCancelable(false)
+//                .setPositiveButton("New game",
+//                        (dialog, which) -> startActivity(new Intent(requireActivity().getApplicationContext(), CovidQuizFragment.class)))
+//                .setNegativeButton("Exit",
+//                        (dialog, which) -> getActivity().finish());
+//        AlertDialog alertDialog = alertDialogBuilder.create();
+//        alertDialog.show();
 
 
-        //val context: Context = requireActivity().applicationContext;
-        //val toast: Toast = Toast.makeText(context,"Game Over!",Toast.LENGTH_SHORT);
-        //toast.show();
+
+//        val context: Context = requireActivity().applicationContext;
+//        val toast: Toast = Toast.makeText(context,"Game Over!",Toast.LENGTH_SHORT);
+//        toast.show();
     }
 }

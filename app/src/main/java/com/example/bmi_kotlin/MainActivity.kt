@@ -1,6 +1,7 @@
 package com.example.bmi_kotlin
 
 import android.R.attr.button
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val editTextHeight: EditText? = findViewById(R.id.editTextNumberHeight)
         val editTextWeight: EditText? = findViewById(R.id.editTextNumberWeight)
         val editTextAge: EditText? = findViewById(R.id.editTextNumberAge)
-        val buttonHome: Button? = findViewById(R.id.buttonHome)
+        val buttonHome = findViewById<Button>(R.id.buttonHome)
         val buttonCalories = findViewById<Button>(R.id.buttonCalories)
         val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
         val buttonBMI = findViewById<Button>(R.id.buttonBMI)
@@ -70,6 +71,9 @@ class MainActivity : AppCompatActivity() {
                 button!!.visibility = View.VISIBLE
             }
 
+        buttonHome!!.setOnClickListener { openHomeScreen() }
+
+
             findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
                 Snackbar.make(view, "Replace with your own action!", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
@@ -96,6 +100,11 @@ class MainActivity : AppCompatActivity() {
             }
 
  */
+    }
+
+    fun openHomeScreen() {
+        val intent = Intent(this, HomeScreen::class.java)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

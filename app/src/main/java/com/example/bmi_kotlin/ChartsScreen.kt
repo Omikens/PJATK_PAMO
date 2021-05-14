@@ -1,30 +1,19 @@
 package com.example.bmi_kotlin
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import com.example.bmi_kotlin.BarChartScreen
-import com.example.bmi_kotlin.PieChartScreen
 
 class ChartsScreen : AppCompatActivity() {
-    //val buttonBar: Button? = findViewById(com.example.bmi_kotlin.R.id.button2)
 
-    //private var buttonBar: Button? = null
-    private var buttonPie: Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.bmi_kotlin.R.layout.charts_screen)
-        //val toolbar = findViewById<Toolbar>(findViewById(com.example.bmi_kotlin.R.id.toolbar))
-        setSupportActionBar(findViewById<Toolbar>(com.example.bmi_kotlin.R.id.toolbar))
-        //buttonBar = findViewById<Button>(R.id.button2)
-        val buttonBar = findViewById<Button>(com.example.bmi_kotlin.R.id.button2)
+        setContentView(R.layout.charts_screen)
+        setSupportActionBar(findViewById(R.id.toolbar))
+        val buttonBar = findViewById<Button>(R.id.button2)
         buttonBar!!.setOnClickListener { openBarChart() }
-//        buttonPie = findViewById<Button>(R.id.button3)
-        val buttonPie = findViewById<Button>(com.example.bmi_kotlin.R.id.button3)
+        val buttonPie = findViewById<Button>(R.id.button3)
         buttonPie!!.setOnClickListener { openPieChart() }
     }
 
