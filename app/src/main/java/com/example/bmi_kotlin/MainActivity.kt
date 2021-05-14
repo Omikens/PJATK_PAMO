@@ -2,6 +2,7 @@ package com.example.bmi_kotlin
 
 import android.R.attr.button
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -79,27 +80,25 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
             }
         }
-/*
         button.setOnClickListener {
-            val url = "http://stackoverflow.com/"
-        }
-
-        button.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "http://stackoverflow.com/";
-                val height = Integer.parseInt(editTextHeight.getText().toString());
-                val weight = Integer.parseInt(editTextWeight.getText().toString());
-                double bmi = (weight/(height*height))*10000;
-                if (bmi <= 18){url = "https://blog.nasm.org/recipes-for-gaining-muscle";}
-                if (bmi > 18 && bmi < 25){url = "https://www.delicious.com.au/recipes/collections/gallery/60-healthy-dinners-you-can-cook-in-30-minutes/1vo4q819";}
-                if (bmi >= 25){url = "https://www.eatingwell.com/recipes/18045/weight-loss-diet/";}
-                Uri uriUrl = Uri.parse(url);
-                Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-                startActivity(launchBrowser);
+            var url = "http://stackoverflow.com/"
+            val height = editTextHeight!!.text.toString().toInt().toDouble()
+            val weight = editTextWeight!!.text.toString().toInt().toDouble()
+            val bmi = weight / (height * height) * 10000
+            if (bmi <= 18) {
+                url = "https://blog.nasm.org/recipes-for-gaining-muscle"
             }
-
- */
+            if (bmi > 18 && bmi < 25) {
+                url =
+                    "https://www.delicious.com.au/recipes/collections/gallery/60-healthy-dinners-you-can-cook-in-30-minutes/1vo4q819"
+            }
+            if (bmi >= 25) {
+                url = "https://www.eatingwell.com/recipes/18045/weight-loss-diet/"
+            }
+            val uriUrl: Uri = Uri.parse(url)
+            val launchBrowser = Intent(Intent.ACTION_VIEW, uriUrl)
+            startActivity(launchBrowser)
+        }
     }
 
     fun openHomeScreen() {
