@@ -15,22 +15,23 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class PieChartScreen : AppCompatActivity() {
-    lateinit var covidList: ArrayList<Entry>
-    lateinit var countryList: ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.bmi_kotlin.R.layout.pie_chart_screen)
+//
+//        covidList = ArrayList()
+//        covidList = ArrayList()
+//
+//        val pieDataSet = PieDataSet(getList(), "NO of covid")
+//        val pieData = PieData(getCase(), pieDataSet)
+//
+//        pieDataSet.setColors(ColorTemplate.JOYFUL_COLORS)
+//        pieChart.animatedXY(5000, 5000)
+//        pieChart.data = pieData
 
-        covidList = ArrayList()
-        covidList = ArrayList()
 
-        val pieDataSet = PieDataSet(getList(), "NO of covid")
-        val pieData = PieData(getCase(), pieDataSet)
 
-        pieDataSet.setColors(ColorTemplate.JOYFUL_COLORS)
-        pieChart.animatedXY(5000, 5000)
-        pieChart.data = pieData
 
 //        val toolbar = findViewById<Toolbar>(R.id.toolbar)
 //        setSupportActionBar(toolbar)
@@ -56,39 +57,4 @@ class PieChartScreen : AppCompatActivity() {
 //        pieChart.animate()
     }
 
-    fun getList(): MutableList<PieEntry>? {
-        covidList.add(Entry(40f, 0F))
-        covidList.add(Entry(410f, 0F))
-        covidList.add(Entry(420f, 0F))
-        covidList.add(Entry(420f, 0F))
-        covidList.add(Entry(430f, 0F))
-        return MutableList()
-    }
-
-    fun getCase(): ArrayList<Entry> {
-        countryList.add("Entry(40f, 0F)")
-        countryList.add("Entry(410f, 0F)")
-        countryList.add("Entry(420f, 0F)")
-        countryList.add("Entry(420f, 0F)")
-        countryList.add("Entry(430f, 0F)")
-        return countryList
-    }
-
-
-//    fun setPieChart()
-//    {
-//        val xvalues = ArrayList<String>()
-//        xvalues.add("A")
-//        xvalues.add("s")
-//        xvalues.add("e")
-//
-//        val piechartentry = ArrayList<Entry>()
-//        piechartentry.add(PieEntry(2.2f, 0F))
-//        piechartentry.add(Entry(2.2f, 0F))
-//        piechartentry.add(Entry(323.2f, 0F))
-//
-//        val piedataset = PieDataSet(piechartentry, "sdds")
-//        val data = PieData(xvalues,piedataset)
-//        piechart.data = data
-//    }
 }
